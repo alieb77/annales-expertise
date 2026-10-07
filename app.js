@@ -116,7 +116,7 @@ const shortSec=s=>String(s.title||"").replace(/\s*\(.*?\)\s*$/,"").replace(/\s*[
 
 /* ---------- barre du haut ---------- */
 function topbar(extra){
-  $top.innerHTML=`<div class="brand" data-go="home">Annales ISCAE — Expertise comptable<small>Concours d'accès 2004 → 2025 · ${EXAMS.length} épreuves corrigées</small></div>
+  $top.innerHTML=`<div class="brand" data-go="home">Annales ISCAE — Expertise comptable<small>Concours d'accès ${Math.min(...EXAMS.map(e=>e.year))} → ${Math.max(...EXAMS.map(e=>e.year))} · ${EXAMS.length} épreuves corrigées</small></div>
   <div class="spacer"></div>${extra||""}
   <button class="btn ghost sm" data-go="home">Épreuves</button>
   ${THEMES.length?`<button class="btn ghost sm" data-go="themes">🎯 Thèmes</button>`:""}
